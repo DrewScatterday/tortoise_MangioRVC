@@ -98,9 +98,9 @@ conda install pytorch==2.0.0 torchvision torchaudio pytorch-cuda=11.7 -c pytorch
 conda install transformers=4.29.2
 pip install -r requirements.txt 
 pip3 install git+https://github.com/152334H/BigVGAN.git
-python diditwork.py
+python pipeline.py
 ```
-- `diditwork.py` will run the whole pipeline with default models and parameters to make sure its working. If it worked you will see a file called `itworked.wav`
+- You will need to edit pipeline.py with paths to your model checkpoints and other parameters
 
 ## ⚙️ Other helpful resources:
 - [Tortoise + RVC](https://www.youtube.com/watch?v=IcpRfHod1ic) (this was the inspiration for the creation of this repo, thanks Jarrod!)
