@@ -77,7 +77,7 @@ wav_opt = vc_single(sid=speaker_id, input_audio=input_audio, f0_up_key=f0up_key,
 output_audio_path = os.path.join(os.pardir, "test.wav")
 wavfile.write(output_audio_path, resample_sr, wav_opt)
 ```
-The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM (and thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a WebGUI like other repos do), not bad. 
+The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM, not bad. And thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a GUI server like other repos do (where models are loaded into memory upon startup of the UI). 
 
 https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90fc-445e-a89e-96f30e9d2a6b
 
@@ -85,11 +85,11 @@ https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90
 ## 💻 Installation: 
 As a disclaimer, installing this is not simple and quite hacky. You will need to do the following: 
 - Install [miniconda](https://docs.conda.io/projects/miniconda/en/latest/)
-- Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2)
+- (Optional) Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2). If you already have .pth model checkpoint files and just care about inference, then you don't need to install this
 - Install Mangio RVC Fork, you can do this by cloning the repo or using 7zip. I recommend 7zip as its much easier [Mangio RVC 7zip install guide](https://docs.google.com/document/d/1KKKE7hoyGXMw-Lg0JWx16R8xz3OfxADjwEYJTqzDO1k/edit) (if this is out of date check the AI hub discord for up to date installation)
-- Once you have these installed do `git clone https://github.com/DrewScatterday/tortoise_MangioRVC.git`
+- Once you have these installed: `git clone https://github.com/DrewScatterday/tortoise_MangioRVC.git`
 - Once cloned, make sure the RVC Mangio Fork folder is placed within this repo directory
-- Next clone fast tortoise. I would recommend using my fork as it has deepspeed implemented for maximum speed. But you can also use the original `git clone https://github.com/152334H/tortoise-tts-fast.git`
+- Next clone fast tortoise. I would recommend using my fork as it has deepspeed implemented for maximum speed. But you can also use the original if you'd like `git clone https://github.com/DrewScatterday/tortoise-tts-fast.git`
 - Make sure tortoise is also placed within this repo directory
 - Then do the following commands:
 ```
@@ -111,8 +111,8 @@ python pipeline.py
 ## ⚠️ Disclaimers: 
 - This repo is purely for fun. It has no association with my employer and only my personal hardware was used in the creation of this repo.
 - This repo is open source, there will be bugs and it is very much a work in progress. 
-- There are ethical concerns with this technology. Here is a link to the original repo discussing [concerns](https://github.com/neonbjb/tortoise-tts#ethical-considerations). I've mostly been using it for silly jokes and to have fun. I'm not responsible for actions that come from this repo, check out the license for more details. Please be a good human being :)
-- Lastly, this repo is aimed at being a python API/bridge between these two tools. If you are after a GUI implementation I would recommend this [repo](https://github.com/rsxdalv/tts-generation-webui) or this [repo](https://github.com/litagin02/rvc-tts-webui) (although I don't think it will be as fast or high quality as this repo) 
+- There are ethical concerns with this technology. Here is a link to the original repo discussing [concerns](https://github.com/neonbjb/tortoise-tts#ethical-considerations). I've mostly been using it for silly jokes and to have fun. I'm not responsible or liable for software that comes from this repo, check out the license for more details. Please be a good human being :)
+- Lastly, this repo is currently only a python API/bridge between these two tools. If you are after a GUI implementation I would recommend this [repo](https://github.com/rsxdalv/tts-generation-webui) or this [repo](https://github.com/litagin02/rvc-tts-webui) (although I don't think it will be as fast or high quality as this repo) 
 
 ## 📘 Resources and Licenses: 
 - [bark-with-voice-clone](https://github.com/serp-ai/bark-with-voice-clone) - [MIT License](https://github.com/serp-ai/bark-with-voice-clone/blob/main/LICENSE.md) 
@@ -123,7 +123,8 @@ python pipeline.py
 - [Retrieval-based-Voice-Conversion-WebUI](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) - [MIT License](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/LICENSE)
 
 ## ✔️ Future Improvements:  
-- [ ] Adopt Streamlit UI from fast tortoise fork for easier use and even faster inference times (since models can be loaded in seperate from inference)
+I currently have a full time job and I'm working on a few other side projects so it will tough for me to make these changes. Happy to approve a pull request if someone wants to take the torch. 
+- [ ] Adopt Streamlit UI from fast tortoise fork for easier use and even faster inference times (where models are loaded into memory upon startup of the UI)
 - [ ] Dockerfile that will run the UI upon startup for easier usage 
 - [ ] Make install process less hacky with a .bat setup file or having a .7z file that has everything installed
 - [ ] Maybe create a precompiled PYPI package that makes it easier to use
