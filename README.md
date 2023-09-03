@@ -77,7 +77,7 @@ wav_opt = vc_single(sid=speaker_id, input_audio=input_audio, f0_up_key=f0up_key,
 output_audio_path = os.path.join(os.pardir, "test.wav")
 wavfile.write(output_audio_path, resample_sr, wav_opt)
 ```
-The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM (and thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a WebGUI like other frameworks do), not bad at all. 
+The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM (and thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a WebGUI like other repos do), not bad. 
 
 https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90fc-445e-a89e-96f30e9d2a6b
 
