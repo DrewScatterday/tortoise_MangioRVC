@@ -122,8 +122,8 @@ python diditwork.py
 - [Retrieval-based-Voice-Conversion-WebUI](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) - [MIT License](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/LICENSE)
 
 ## Improvements:  
-- [ ] Adopt Streamlit UI from fast tortoise fork for easier use and even faster inference times (since models can be loaded into seperate from inference)
-- [ ] Dockerfile that will run the UI straight away for easier usage 
+- [ ] Adopt Streamlit UI from fast tortoise fork for easier use and even faster inference times (since models can be loaded in seperate from inference)
+- [ ] Dockerfile that will run the UI upon startup for easier usage 
 - [ ] Make install process less hacky with a .bat setup file or having a .7z file that has everything installed
 - [ ] Maybe create a precompiled PYPI package that makes it easier to use
 - [ ] Do some testing on a 3090/4090 to get some speed benchmarks 
