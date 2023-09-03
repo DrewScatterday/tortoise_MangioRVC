@@ -101,7 +101,7 @@ pip install -r requirements.txt
 pip3 install git+https://github.com/152334H/BigVGAN.git
 python pipeline.py
 ```
-- You will need to edit pipeline.py with paths to your model checkpoints and other parameters
+- You will need to edit `pipeline.py` with paths to your model checkpoints and other parameters
 
 ## ⚙️ Other helpful resources:
 - [Tortoise + RVC](https://www.youtube.com/watch?v=IcpRfHod1ic) (this was the inspiration for the creation of this repo, thanks Jarrod!)
