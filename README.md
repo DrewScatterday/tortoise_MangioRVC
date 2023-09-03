@@ -77,7 +77,7 @@ wav_opt = vc_single(sid=speaker_id, input_audio=input_audio, f0_up_key=f0up_key,
 output_audio_path = os.path.join(os.pardir, "test.wav")
 wavfile.write(output_audio_path, resample_sr, wav_opt)
 ```
-The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM, not bad. 
+The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM (and thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a WebGUI like other frameworks do), not bad at all. 
 
 https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90fc-445e-a89e-96f30e9d2a6b
 
@@ -110,7 +110,7 @@ python diditwork.py
 ## Disclaimers: 
 - This repo is purely for fun. It has no association with my employer and only my personal hardware was used in the creation of this repo.
 - This repo is open source, there will be bugs and it is very much a work in progress. 
-- There are ethical concerns with this technology. Here is a link to the original repo discussing [concerns](https://github.com/neonbjb/tortoise-tts#ethical-considerations). I've mostly been using it for silly jokes and to have fun. I'm not responsible for actions that come from this repo, Check out the license for more details. Please be a nice human being :)
+- There are ethical concerns with this technology. Here is a link to the original repo discussing [concerns](https://github.com/neonbjb/tortoise-tts#ethical-considerations). I've mostly been using it for silly jokes and to have fun. I'm not responsible for actions that come from this repo, check out the license for more details. Please be a good human being :)
 - Lastly, this repo is aimed at being a python API/bridge between these two tools. If you are after a GUI implementation I would recommend this [repo](https://github.com/rsxdalv/tts-generation-webui) or this [repo](https://github.com/litagin02/rvc-tts-webui) (although I don't think it will be as fast or high quality as this repo) 
 
 ## Resources and Licenses: 
@@ -122,7 +122,7 @@ python diditwork.py
 - [Retrieval-based-Voice-Conversion-WebUI](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) - [MIT License](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/LICENSE)
 
 ## Improvements:  
-- [ ] Add Streamlit UI for easier use
+- [ ] Adopt Streamlit UI from fast tortoise fork for easier use and even faster inference times (since models can be loaded into seperate from inference)
 - [ ] Make install process less hacky with a .bat setup file or having a .7z file that has everything installed
 - [ ] Maybe create a precompiled PYPI package that makes it easier to use
 - [ ] Do some testing on a 3090/4090 to get some speed benchmarks 
