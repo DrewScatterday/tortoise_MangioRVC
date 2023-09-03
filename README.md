@@ -88,8 +88,9 @@ As a disclaimer, installing this is not simple and quite hacky. You will need to
 - Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2)
 - Install Mangio RVC Fork, you can do this by cloning the repo or using 7zip. I recommend 7zip as its much easier [Mangio RVC 7zip install guide](https://docs.google.com/document/d/1KKKE7hoyGXMw-Lg0JWx16R8xz3OfxADjwEYJTqzDO1k/edit) (if this is out of date check the AI hub discord for up to date installation)
 - Once you have these installed do `git clone https://github.com/DrewScatterday/tortoise_MangioRVC.git`
-- Once cloned, make sure the RVC Mangio Fork folder is placed within this directory
+- Once cloned, make sure the RVC Mangio Fork folder is placed within this repo directory
 - Next clone fast tortoise. I would recommend using my fork as it has deepspeed implemented for maximum speed. But you can also use the original `git clone https://github.com/152334H/tortoise-tts-fast.git`
+- Make sure tortoise is also placed within this repo directory
 - Then do the following commands:
 ```
 conda create --name tortoiseRVC python=3.9 numba inflect
