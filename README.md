@@ -10,7 +10,7 @@ and <a href="https://github.com/Mangio621/Mangio-RVC-For">Mangio-RVC-Fork</a><br
 </div>
 
 ## 📝 Summary: 
-A few months ago, I made a fun TTS side project with 11Labs but was frustrated with API costs. I set out to find the best local TTS workflow. After testing I think this is the best (with respect to speed and quality) local TTS option as of September 2023. 
+A few months ago, I made a fun TTS side project with 11Labs but was frustrated with API costs. I set out to find the best local AI TTS. After testing I think this is the best (with respect to speed and quality) local TTS option as of September 2023. 
 
 > ⭐ If you like this repo, give it a star and support the projects it's built upon. I'm merely standing on the shoulders of giants.
 
@@ -77,13 +77,16 @@ wav_opt = vc_single(sid=speaker_id, input_audio=input_audio, f0_up_key=f0up_key,
 output_audio_path = os.path.join(os.pardir, "test.wav")
 wavfile.write(output_audio_path, resample_sr, wav_opt)
 ```
-The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM, not bad. And thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a GUI server like other repos do (where models are loaded into memory upon startup of the UI). 
+The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM, not bad. And thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a GUI server (see improvements section) where models are loaded into memory upon startup of the UI.
 
 https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90fc-445e-a89e-96f30e9d2a6b
 
-
 ## 💻 Installation: 
-As a disclaimer, installing this is not simple and quite hacky. You will need to do the following: 
+⚠️ As a disclaimer, installing this is not simple and quite hacky (see the improvements section). 
+
+⚠️ Unfortunately, deepspeed is not supported on Windows (which is ironic because the repo is operated by Microsoft). Luckily, linux with WSL is not too painful to setup and integrates pretty well with VS code (see the improvements section)
+
+You will need to do the following: 
 - Install [miniconda](https://docs.conda.io/projects/miniconda/en/latest/)
 - (Optional) Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2). If you already have .pth model checkpoint files and just care about inference, then you don't need to install this
 - Install Mangio RVC Fork, you can do this by cloning the repo or using 7zip. I recommend 7zip as its much easier [Mangio RVC 7zip install guide](https://docs.google.com/document/d/1KKKE7hoyGXMw-Lg0JWx16R8xz3OfxADjwEYJTqzDO1k/edit) (if this is out of date check the AI hub discord for up to date installation)
@@ -97,13 +100,16 @@ conda create --name tortoiseRVC python=3.9 numba inflect
 conda activate tortoiseRVC
 conda install pytorch==2.0.0 torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 conda install transformers=4.29.2
+conda install -c conda-forge cudatoolkit-dev
 pip install -r requirements.txt 
 pip3 install git+https://github.com/152334H/BigVGAN.git
+pip install deepspeed=0.10.2 # linux/WSL only
 python pipeline.py
 ```
+⚠️ If you are on windows, you will also need to install pysoundfile: `conda install -c conda-forge pysoundfile`
 - You will need to edit `pipeline.py` with paths to your model checkpoints and other parameters
 
-## ⚙️ Other helpful resources:
+## ⚙️ Helpful video resources:
 - [Tortoise + RVC](https://www.youtube.com/watch?v=IcpRfHod1ic) (this was the inspiration for the creation of this repo, thanks Jarrod!)
 - The best [settings](https://www.youtube.com/watch?v=fYEdKwqwiG4) for speed and quality for tortoise inference 
 - NanoNomad on [speeding up tortoise](https://www.youtube.com/watch?v=Fzah3eJabOY) and [finetuning tortoise](https://www.youtube.com/watch?v=P3BbCG0hTwU)
