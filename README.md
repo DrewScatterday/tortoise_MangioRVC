@@ -86,7 +86,7 @@ https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/e8104a7c-59
 
 ⚠️ Unfortunately, deepspeed is not supported on Windows (which is ironic because the repo is operated by Microsoft). Luckily, linux with WSL is not too painful to setup and integrates pretty well with VS code (see the improvements section)
 
-See step by step [install walkthrough](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/Installation.md) for linux WSL for a detailed guide. I recommend using this on WSL, I have not tested this a ton on Windows as deepspeed is not supported. 
+See step by step [install walkthrough](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/Installation.md) for linux WSL. I recommend using this on WSL, I have not tested this a ton on Windows as deepspeed is not supported. 
 
 ### High Level steps: : 
 - (Optional) Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2). If you already have .pth model checkpoint files and just care about inference, then you don't need to install this
