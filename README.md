@@ -86,10 +86,11 @@ https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/e8104a7c-59
 
 ⚠️ Unfortunately, deepspeed is not supported on Windows (which is ironic because the repo is operated by Microsoft). Luckily, linux with WSL is not too painful to setup and integrates pretty well with VS code (see the improvements section)
 
-You will need to do the following: 
-- Install [miniconda](https://docs.conda.io/projects/miniconda/en/latest/)
+See step by step [install walkthrough](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/Installation.md) for linux WSL for a detailed guide. I recommend using this on WSL, I have not tested this a ton on Windows as deepspeed is not supported. 
+
+### High Level steps: : 
 - (Optional) Install [ai-voice-cloning](https://git.ecker.tech/mrq/ai-voice-cloning) to create finetuned tortoise models. Here's a video [guide](https://youtu.be/6sTsqSQYIzs?si=dva0uYGnKwxpQJg2). If you already have .pth model checkpoint files and just care about inference, then you don't need to install this
-- Install Mangio RVC Fork, you can do this by cloning the repo or using 7zip. I recommend 7zip as its much easier [Mangio RVC 7zip install guide](https://docs.google.com/document/d/1KKKE7hoyGXMw-Lg0JWx16R8xz3OfxADjwEYJTqzDO1k/edit) (if this is out of date check the AI hub discord for up to date installation)
+- Install Mangio RVC Fork [Mangio RVC 7zip install guide](https://docs.google.com/document/d/1KKKE7hoyGXMw-Lg0JWx16R8xz3OfxADjwEYJTqzDO1k/edit) (if this is out of date check the AI hub discord for up to date installation)
 - Once you have these installed: `git clone https://github.com/DrewScatterday/tortoise_MangioRVC.git`
 - Once cloned, make sure the RVC Mangio Fork folder is placed within this repo directory
 - Next clone fast tortoise. I would recommend using my fork as it has deepspeed implemented for maximum speed. But you can also use the original if you'd like `git clone https://github.com/DrewScatterday/tortoise-tts-fast.git`
@@ -101,12 +102,12 @@ conda activate tortoiseRVC
 conda install pytorch==2.0.0 torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 conda install transformers=4.29.2
 conda install -c conda-forge cudatoolkit-dev
-pip install -r requirements.txt 
+sudo apt-get install gcc
+sudo apt-get install g++
+pip install -r requirements.txt
 pip3 install git+https://github.com/152334H/BigVGAN.git
-pip install deepspeed=0.10.2 # linux/WSL only
-python pipeline.py
+pip install deepspeed==0.10.2 
 ```
-⚠️ If you are on windows, you will also need to install pysoundfile: `conda install -c conda-forge pysoundfile`
 - You will need to edit `pipeline.py` with paths to your model checkpoints and other parameters
 
 ## ⚙️ Helpful video resources:
