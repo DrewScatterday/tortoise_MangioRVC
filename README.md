@@ -46,7 +46,7 @@ gen_resampled = torchaudio.transforms.Resample(orig_freq=24000, new_freq=16000)(
 tortoise_out = gen_resampled.squeeze(0).detach().cpu().numpy().flatten()
 ```
 
-https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/6e230e57-5f40-4efc-bd77-102191fa8933
+https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/58361b58-2cb2-4393-90ba-f751c33d15d3
 
 ### 🎙️ Mangio RVC usage: 
 For RVC, we'll import the RVC api, create our model and voice params, then call the `vc_single` function to convert the audio: 
@@ -79,7 +79,7 @@ wavfile.write(output_audio_path, resample_sr, wav_opt)
 ```
 The whole pipeline only took about 9 seconds on my 3070TI with 8GB VRAM, not bad. And thats with the added time of initalizing models and frameworks, you could get even faster if you ran this like a GUI server (see improvements section) where models are loaded into memory upon startup of the UI.
 
-https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/9c9852ce-90fc-445e-a89e-96f30e9d2a6b
+https://github.com/DrewScatterday/tortoise_MangioRVC/assets/28267620/e8104a7c-5934-4729-9d26-1f9b704e46f4
 
 ## 💻 Installation: 
 ⚠️ As a disclaimer, installing this is not simple and quite hacky (see the improvements section). 
