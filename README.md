@@ -24,7 +24,7 @@ A few months ago, I made a fun TTS side project with 11Labs but was frustrated w
 ## 🤖 Usage: 
 Usage is with `pipeline.py`
 ### 🐢 Tortoise usage
-For Tortoise, import the API, initalize your model, load your voice latents file, set your parameters, and call the `tts_with_preset` function. For more info on all the parameters you can use with these functions, checkout `api.py` in the tortoise repo:
+For Tortoise, import the API, initalize your model, load your voice latents file (I found better results using the .pth voice latent file produced from the ai-voice-cloning repo rather than using audio samples), set your parameters, and call the `tts_with_preset` function. For more info on all the parameters you can use with these functions, checkout `api.py` in the tortoise repo:
 ```python
 from tortoise.utils.audio import load_audio, load_voice, load_voices
 from tortoise.api import TextToSpeech
