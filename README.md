@@ -1,7 +1,7 @@
 <div align="center">
 <h1>🐢 Fast TorToiSe TTS + 🎙️ Mangio-RVC-Fork</h1>
 🐍 This repo acts as a pythonic bridge between <a href="https://github.com/152334H/tortoise-tts-fast">tortoise-tts-fast</a> 
-and <a href="https://github.com/Mangio621/Mangio-RVC-For">Mangio-RVC-Fork</a><br><br>
+and <a href="https://github.com/Mangio621/Mangio-RVC-Fork">Mangio-RVC-Fork</a><br><br>
     
 [![madewithlove](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/assets/madewithlove.svg)](https://github.com/DrewScatterday/tortoise_MangioRVC)
 [![Licence](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/assets/license.svg)](https://github.com/DrewScatterday/tortoise_MangioRVC/blob/main/LICENSE)
